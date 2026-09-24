@@ -6,7 +6,7 @@ import PackageDescription
 let endpoint: String = "https://github.com/folium-app/SharedDependencies/releases/download"
 let `extension`: String = "xcframework.zip"
 
-func url(for libraryName: String, with version: String = "2.0") -> String {
+func url(for libraryName: String, with version: String = "1.0") -> String {
     "\(endpoint)/\(version)/\(libraryName).\(`extension`)"
 }
 
@@ -26,19 +26,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "SharedDependencies", dependencies: [
-            // "libavcodec",
-            // "libavdevice",
-            // "libavfilter",
-            // "libavformat",
-            // "libavutil",
-            // "libswresample",
-            // "libswscale",
-            
-            // "lib_boostcontext",
-            // "lib_boostiostreams",
-            // "lib_boostprogramoptions",
-            // "lib_boostserialization",
-            
             "lib_dynarmic",
             "lib_enet",
             "lib_faad2",
@@ -154,48 +141,6 @@ let package = Package(
         .target(name: "tsl", publicHeadersPath: "include"),
         .target(name: "xxhash", publicHeadersPath: "include"),
         
-        
-        .binaryTarget(name: "libavcodec",
-                      url: url(for: "libavcodec"),
-                      checksum: "3a3ac9f76281ebcf5d76e79b437d6f036d928ab2e61dd0867cf2efce9ee84861"),
-        .binaryTarget(name: "libavdevice",
-                      url: url(for: "libavdevice"),
-                      checksum: "8a1c4faad8361933df6b6c9972af4f8b500c5fe09b9cfb84b9040033af395388"),
-        .binaryTarget(name: "libavfilter",
-                      url: url(for: "libavfilter"),
-                      checksum: "8b93b99872b5f2b5ab5b9794ab6f0b612c9b8c9cfa9566c41d1f30172a7bb13f"),
-        .binaryTarget(name: "libavformat",
-                      url: url(for: "libavformat"),
-                      checksum: "7d513e13fef76fbcd90fa12400c30af7ba0e833f452695638fa0b21d4415c1e3"),
-        .binaryTarget(name: "libavutil",
-                      url: url(for: "libavutil"),
-                      checksum: "8a3e3e71ff1e19f7e48151973c97ab46ce583550bcf5bb15078a94d8b14c12e0"),
-        .binaryTarget(name: "libswresample",
-                      url: url(for: "libswresample"),
-                      checksum: "9c41438050e8e0e560752b46a3408f23b79e822048c824cb5ce142087ffc8700"),
-        .binaryTarget(name: "libswscale",
-                      url: url(for: "libswscale"),
-                      checksum: "0f3a04a2d0940254e4e93f502909d3c9e2bcc9cbe52888e3e118e9fc7bb0edf1"),
-        
-        
-        .binaryTarget(name: "lib_boostcontext",
-                      url: url(for: "lib_boostcontext"),
-                      checksum: "4f2ba5c87c8852c903acec24db962ec9b9c728dc36bdf1fa611484f6252aeea8"),
-        
-        .binaryTarget(name: "lib_boostiostreams",
-                      url: url(for: "lib_boostiostreams"),
-                      checksum: "f8e3d5ee918b850f0b31aac15d5c34f49e1da25d3ea593c73685136ad9636a17"),
-        
-        .binaryTarget(name: "lib_boostprogramoptions",
-                      url: url(for: "lib_boostprogramoptions"),
-                      checksum: "b36f2b112cc0e1589e7feec30dded2ca3077b1cd7326acab56f18ea0a7a019b0"),
-        
-        .binaryTarget(name: "lib_boostserialization",
-                      url: url(for: "lib_boostserialization"),
-                      checksum: "1420ddd113ce3b04a9589242562f88b75a2c301a4c85ba116231dd009e00f4d2"),
-        
-        
-        
         .binaryTarget(name: "lib_dynarmic",
                       url: url(for: "lib_dynarmic"),
                       checksum: "643ba9854728fe6d2aee8070f1f4e3c3a942d76167a63ca54877b1a86924155d"),
@@ -238,8 +183,8 @@ let package = Package(
         
         
         .binaryTarget(name: "lib_sdl3",
-                      url: url(for: "lib_sdl3", with: "0.0.7"),
-                      checksum: "157266698caea1dc10eff355d2d500eb15f994f17f52f16e8cee20f15cc99a9b"),
+                      url: url(for: "lib_sdl3"),
+                      checksum: "e7b5387f07d03bdbca5c9abb8bbd3bb9ff4c6c8bb46ba0f03291b58265d522bb"),
         
         
         .binaryTarget(name: "lib_sirit",
