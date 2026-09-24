@@ -6,7 +6,7 @@ import PackageDescription
 let endpoint: String = "https://github.com/folium-app/SharedDependencies/releases/download"
 let `extension`: String = "xcframework.zip"
 
-func url(for libraryName: String, with version: String = "1.0") -> String {
+func url(for libraryName: String, with version: String = "1.0.0") -> String {
     "\(endpoint)/\(version)/\(libraryName).\(`extension`)"
 }
 
