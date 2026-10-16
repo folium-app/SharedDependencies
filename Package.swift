@@ -41,6 +41,7 @@ let package = Package(
             "lib_spirv",
             "lib_teakra",
             
+            "boost",
             "cereal",
             "cryptopp",
             "dds_ktx",
@@ -64,6 +65,7 @@ let package = Package(
             "tsl",
             "xxhash"
         ]),
+        .target(name: "boost", publicHeadersPath: "include"),
         .target(name: "cereal", publicHeadersPath: "include"),
         .target(name: "cryptopp", publicHeadersPath: "include", cxxSettings: [
             .define("CRYPTOPP_DISABLE_ARM_CRC32"),
@@ -128,12 +130,10 @@ let package = Package(
                 ]),
         .target(name: "miniz", publicHeadersPath: "include"),
         .target(name: "nihstro",
-                publicHeadersPath: "include",
-                cxxSettings: [
-                    .unsafeFlags([
-                        "-I/usr/local/include"
-                    ])
-                ]),
+                dependencies: [
+                    "boost"
+                ],
+                publicHeadersPath: "include"),
         .target(name: "nlohmann", publicHeadersPath: "include"),
         .target(name: "oaknut", publicHeadersPath: "include"),
         .target(name: "osa", publicHeadersPath: "include"),
